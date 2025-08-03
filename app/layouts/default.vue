@@ -1,5 +1,9 @@
+<script setup lang="ts">
+</script>
+
 <template>
-    <UApp>
-        <slot />
-    </UApp>
+  <UApp>
+    <Navbar />
+    <slot />
+  </UApp>
 </template>

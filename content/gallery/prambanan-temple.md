@@ -1,7 +1,7 @@
 ---
 title: "Cultural Journey at Prambanan Temple"
 description: "A day of history and culture with a family from the Netherlands."
-image: "/gallery/prambanan-temple.jpg"
+image: "https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=600&q=80"
 date: 2024-06-02
 ---
 

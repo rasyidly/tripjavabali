@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "destinations": "Destinations",
+    "gallery": "Gallery",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Explore the Wonders of Java & Bali",
+    "subtitle": "Your trusted personal tour guide for unforgettable adventures across Java and Bali islands",
+    "cta": "Contact via WhatsApp"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am an experienced tour guide with a passion for showing international travelers the hidden gems of Indonesia.",
+    "experience": "Experience",
+    "travelers": "Happy Travelers", 
+    "languages": "Languages",
+    "licensed": "Licensed",
+    "certified": "Certified Guide"
+  },
+  "destinations": {
+    "title": "Popular Destinations",
+    "yogyakarta": "Yogyakarta",
+    "bromo": "Mount Bromo",
+    "ubud": "Ubud, Bali",
+    "borobudur": "Borobudur Temple",
+    "ijen": "Ijen Crater",
+    "prambanan": "Prambanan Temple"
+  },
+  "gallery": {
+    "title": "Travel Gallery",
+    "viewDetails": "View Details"
+  },
+  "testimonials": {
+    "title": "Testimonials"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Ready to plan your next adventure?",
+    "whatsapp": "WhatsApp Chat",
+    "email": "Email"
+  }
+}

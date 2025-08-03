@@ -1,7 +1,7 @@
 ---
 title: "Ijen Crater Blue Fire Adventure"
 description: "A midnight trek to witness the famous blue fire with backpackers from Japan."
-image: "/gallery/ijen-blue-fire.jpg"
+image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80"
 date: 2024-08-21
 ---
 

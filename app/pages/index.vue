@@ -1,19 +1,31 @@
+<script setup lang="ts">
+definePageMeta({
+  title: 'Home',
+  layout: 'default'
+})
+
+</script>
+
 <template>
   <main>
-    <HeroSection />
-    <AboutSection />
-    <DestinationsSection />
-    <GallerySection />
-    <TestimonialsSection />
-    <ContactSection />
+    <Navbar />
+    <section id="hero">
+      <HeroSection />
+    </section>
+    <section id="about">
+      <AboutSection />
+    </section>
+    <section id="destinations">
+      <DestinationsSection />
+    </section>
+    <section id="gallery">
+      <GallerySection />
+    </section>
+    <section id="testimonials">
+      <TestimonialsSection />
+    </section>
+    <section id="contact">
+      <ContactSection />
+    </section>
   </main>
 </template>
-
-<script setup lang="ts">
-import HeroSection from '~/components/HeroSection.vue'
-import AboutSection from '~/components/AboutSection.vue'
-import DestinationsSection from '~/components/DestinationsSection.vue'
-import GallerySection from '~/components/GallerySection.vue'
-import TestimonialsSection from '~/components/TestimonialsSection.vue'
-import ContactSection from '~/components/ContactSection.vue'
-</script>

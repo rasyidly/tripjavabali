@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "destinations": "Destinasi",
+    "gallery": "Galeri",
+    "testimonials": "Testimoni",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "title": "Jelajahi Keajaiban Java & Bali",
+    "subtitle": "Pemandu wisata pribadi terpercaya untuk petualangan tak terlupakan di Pulau Jawa dan Bali",
+    "cta": "Hubungi via WhatsApp"
+  },
+  "about": {
+    "title": "Tentang Saya",
+    "description": "Saya adalah pemandu wisata berpengalaman dengan passion untuk menunjukkan keindahan tersembunyi Indonesia kepada para traveler internasional.",
+    "experience": "Pengalaman",
+    "travelers": "Wisatawan Senang",
+    "languages": "Bahasa",
+    "licensed": "Berlisensi",
+    "certified": "Pemandu Bersertifikat"
+  },
+  "destinations": {
+    "title": "Destinasi Populer",
+    "yogyakarta": "Yogyakarta",
+    "bromo": "Gunung Bromo",
+    "ubud": "Ubud, Bali",
+    "borobudur": "Candi Borobudur",
+    "ijen": "Kawah Ijen",
+    "prambanan": "Candi Prambanan"
+  },
+  "gallery": {
+    "title": "Galeri Perjalanan",
+    "viewDetails": "Lihat Detail"
+  },
+  "testimonials": {
+    "title": "Testimoni"
+  },
+  "contact": {
+    "title": "Hubungi Saya",
+    "subtitle": "Siap merencanakan petualangan Anda berikutnya?",
+    "whatsapp": "Chat WhatsApp",
+    "email": "Email"
+  }
+}
