@@ -1,9 +1,6 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <UApp>
+  <div>
     <Navbar />
     <slot />
-  </UApp>
+  </div>
 </template>

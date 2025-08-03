@@ -8,7 +8,6 @@ definePageMeta({
 
 <template>
   <main>
-    <Navbar />
     <section id="hero">
       <HeroSection />
     </section>

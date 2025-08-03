@@ -1,14 +1,16 @@
-
 <script setup lang="ts">
-const colorMode = useColorMode()
+import type { DropdownMenuItem, SelectMenuItem } from '@nuxt/ui'
 
-const { locale, setLocale } = useI18n()
-const selectedLocale = ref(locale.value)
-const localeOptions = [
-  { label: 'ID', value: 'id', icon: 'i-twemoji-flag-indonesia' },
-  { label: 'EN', value: 'en', icon: 'i-twemoji-flag-united-states' }
-]
+const colorMode = useColorMode()
 const switchLocalePath = useSwitchLocalePath()
+
+const { locale } = useI18n()
+const selectedLocale = ref(locale.value)
+const localeOptions: DropdownMenuItem[] = [
+  { label: 'ID', value: 'id', icon: 'i-twemoji-flag-indonesia', to: switchLocalePath('id') },
+  { label: 'EN', value: 'en', icon: 'i-twemoji-flag-united-states', to: switchLocalePath('en') }
+]
+
 const isDark = computed(() => colorMode.value === 'dark')
 
 const mobileMenuOpen = ref(false)
@@ -21,13 +23,6 @@ const sections = [
   { id: 'testimonials', label: 'nav.testimonials' },
   { id: 'contact', label: 'nav.contact' }
 ]
-
-
-const changeLocale = async (val: any) => {
-  if (val === locale.value) return // Sudah di locale yang dipilih, tidak perlu apa-apa
-  await setLocale(val)
-  window.location.href = switchLocalePath(val)
-}
 
 const toggleColorMode = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
@@ -46,7 +41,7 @@ onMounted(() => {
     mobileMenuOpen.value = false
   }
   document.addEventListener('click', handleClickOutside)
-  
+
   onBeforeUnmount(() => {
     document.removeEventListener('click', handleClickOutside)
   })
@@ -65,13 +60,7 @@ onMounted(() => {
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <a 
-            v-for="section in sections" 
-            :key="section.id"
-            :href="`#${section.id}`"
-            class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-            @click="scrollToSection(section.id)"
-          >
+          <a v-for="section in sections" :key="section.id" :href="`#${section.id}`" class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors" @click="scrollToSection(section.id)">
             {{ $t(section.label) }}
           </a>
         </div>
@@ -79,44 +68,27 @@ onMounted(() => {
         <!-- Controls -->
         <div class="flex items-center space-x-3">
           <!-- Language Switcher -->
-          <USelect
-            :items="localeOptions"
-            v-model="selectedLocale"
-            size="sm"
-            class="w-24"
-            @update:modelValue="changeLocale"
-            :icon="selectedLocale === 'id' ? 'i-twemoji-flag-indonesia' : 'i-twemoji-flag-united-states'"
-          />
+          <UDropdownMenu :items="localeOptions">
+            <UButton size="sm" class="w-24 flex items-center justify-between" variant="ghost">
+              <UIcon :name="selectedLocale === 'id' ? 'i-twemoji-flag-indonesia' : 'i-twemoji-flag-united-states'" class="mr-2" />
+              <span>{{ selectedLocale.toUpperCase ? selectedLocale.toUpperCase() : selectedLocale }}</span>
+              <UIcon name="i-heroicons-chevron-down" class="ml-2" />
+            </UButton>
+          </UDropdownMenu>
+
 
           <!-- Theme Toggle -->
-          <UButton 
-            @click="toggleColorMode" 
-            variant="ghost" 
-            size="sm"
-            :icon="isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'"
-          />
+          <UButton @click="toggleColorMode" variant="ghost" size="sm" :icon="isDark ? 'i-heroicons-sun' : 'i-heroicons-moon'" />
 
           <!-- Mobile Menu Toggle -->
-          <UButton 
-            @click="mobileMenuOpen = !mobileMenuOpen"
-            variant="ghost" 
-            size="sm"
-            icon="i-heroicons-bars-3"
-            class="md:hidden"
-          />
+          <UButton @click="mobileMenuOpen = !mobileMenuOpen" variant="ghost" size="sm" icon="i-heroicons-bars-3" class="md:hidden" />
         </div>
       </nav>
 
       <!-- Mobile Navigation -->
       <div v-if="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-800">
         <div class="flex flex-col space-y-4">
-          <a 
-            v-for="section in sections" 
-            :key="section.id"
-            :href="`#${section.id}`"
-            class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
-            @click="scrollToSection(section.id); mobileMenuOpen = false"
-          >
+          <a v-for="section in sections" :key="section.id" :href="`#${section.id}`" class="text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors" @click="scrollToSection(section.id); mobileMenuOpen = false">
             {{ $t(section.label) }}
           </a>
         </div>
